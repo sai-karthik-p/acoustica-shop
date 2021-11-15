@@ -1,0 +1,34 @@
+@import url("/src/index.css");
+
+.footerOuter {
+    display: flex;
+    height: 20rem;
+    margin-top: 5rem;
+    align-items: center;
+    background-color: var(--color-background-2);
+  }
+  
+  .logoContainer {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: max-content;
+  }
+  
+  .logoText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-2);
+  }
+  
+  .username {
+    color: var(--color-text-1);
+  }
+  

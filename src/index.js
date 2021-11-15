@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import setupMockServer from "./api/mock.server";
 import reportWebVitals from './reportWebVitals';
 
+setupMockServer();
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StrictMode>
+      <App />
+  </StrictMode>,
   document.getElementById('root')
 );
 

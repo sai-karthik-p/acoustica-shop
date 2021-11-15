@@ -1,0 +1,295 @@
+@import url("https://acoustica-ui.netlify.app/styles/index.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+.container-landingpage {
+    min-height: 100vh;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.logo-landingpage {
+    max-width: 10rem;
+    margin: 0 auto;
+}
+
+.heading-landingpage {
+    font-size: 3rem;
+}
+
+.description-landingpage {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.navbar-logo-container {
+    overflow: hidden;
+}
+
+.navbar-logo-image {
+    max-height: 60%;
+}
+
+.navbar-logo-container span {
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.header {
+    display: grid;
+    grid-area: header;
+    width: 100%;
+    max-width: 100%;
+    background-color: black;
+    /* position: fixed; */
+    height: 3.75rem;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.header a {
+    color: white;
+}
+
+.documentation {
+    display: grid;
+    grid-area: doc;
+    padding: 1rem;
+    margin-top: 3.75rem;
+}
+
+/* Sidebar Start */
+
+#sidebarMenu {
+    height: 100%;
+    /* position: fixed; */
+    left: 0;
+    width: 15.625rem;
+    margin-top: 3.75rem;
+    transform: translateX(-15.625rem);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, black 0%, #333333 100%);
+    z-index: 100;
+    overflow: scroll;
+}
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1.25rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    /* position: fixed; */
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 1.375rem;
+    left: 0.938rem;
+    height: 1.375rem;
+    width: 1.375rem;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 0.188rem;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 0.188rem;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 0.188rem;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 0.5rem;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -0.563rem;
+}
+
+/* Sidebar End */
+
+.doc-site-layout {
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "doc doc doc doc"
+    "doc doc doc doc";
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0 2rem 0;
+    flex-wrap: wrap;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+section::before { 
+    display: block; 
+    content: " "; 
+    height: 3.75rem;
+    visibility: hidden; 
+    pointer-events: none;
+}
+
+.separator-line {
+    height: 1px;
+    width: 90%;
+    margin: 0.5rem auto;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.section-header-container {
+    padding: 1rem;
+}
+
+.section-header-container p {
+    font-size: 1.2rem;
+}
+
+.copy-to-clipboard-button span {
+    display: none;
+}
+
+.copy-to-clipboard-button::after {
+    cursor: pointer;
+    content: "COPY";
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+a {
+    text-decoration: none;    
+}
+
+@media (max-width: 1030px) {
+    .code-toolbar .language-javascript {
+        font-size: 1.5vw;
+        width: 97vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .code-toolbar .language-javascript {
+        font-size: 1.5vw;
+        width: 97vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .code-toolbar .language-javascript {
+        font-size: 2.2vw;
+        width: 96vw; 
+    }
+}
+
+@media (max-width: 576px) {
+    .code-toolbar .language-javascript {
+        font-size: 2.5vw;
+        width: 94vw;
+    }
+}
+
+@media (max-width: 415px) {
+    .code-toolbar .language-javascript {
+        font-size: 3vw;
+        width: 92vw;
+    }
+}
+
+@media (max-width: 380px) {
+    .code-toolbar .language-javascript {
+        font-size: 3vw;
+        width: 90vw;
+    }
+}
+
+@media (max-width: 319px) {
+    .code-toolbar .language-javascript {
+        font-size: 3vw;
+        width: 86vw;
+    }
+
+    .code-toolbar {
+        width: 88vw;
+    }
+}
